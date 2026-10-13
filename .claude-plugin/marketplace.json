@@ -1,0 +1,9 @@
+{
+  "name": "ai-claude-mods",
+  "description": "Mods para Claude Code",
+  "owner": { "name": "Daniel" },
+  "plugins": [
+    { "name": "contexto", "source": "./claude-mods-contexto" },
+    { "name": "tempo", "source": "./claude-mods-tempo" }
+  ]
+}
