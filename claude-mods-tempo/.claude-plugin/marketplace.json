@@ -1,0 +1,6 @@
+{
+  "name": "tempo-local",
+  "description": "Mod Tempo para Claude Code",
+  "owner": { "name": "Daniel" },
+  "plugins": [{ "name": "tempo", "source": "./" }]
+}
