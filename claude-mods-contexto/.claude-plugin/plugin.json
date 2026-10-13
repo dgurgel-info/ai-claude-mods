@@ -1,0 +1,7 @@
+{
+  "name": "contexto",
+  "version": "0.1.0",
+  "description": "Carga da janela de contexto, numa linha acima do prompt",
+  "author": { "name": "Daniel" },
+  "types": "./types/index.d.ts"
+}

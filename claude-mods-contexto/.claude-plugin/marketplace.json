@@ -1,0 +1,6 @@
+{
+  "name": "contexto-local",
+  "description": "Mod Contexto para Claude Code",
+  "owner": { "name": "Daniel" },
+  "plugins": [{ "name": "contexto", "source": "./" }]
+}
