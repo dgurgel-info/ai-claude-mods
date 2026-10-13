@@ -41,7 +41,7 @@ A linha some enquanto uma pesquisa (survey) estiver aberta ou antes da primeira 
 
 ```
 /plugin marketplace add dgurgel-info/ai-claude-mods
-/plugin install contexto@contexto-local
+/plugin install contexto@ai-claude-mods
 ```
 
 (ou, localmente, `/plugin marketplace add ./claude-mods-contexto`)

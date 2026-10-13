@@ -21,7 +21,7 @@ Mostra a previsão do tempo e a tábua da maré da sua localidade, em português
 
 ```
 /plugin marketplace add dgurgel-info/ai-claude-mods
-/plugin install tempo@tempo-local
+/plugin install tempo@ai-claude-mods
 ```
 
 ## Estrutura
