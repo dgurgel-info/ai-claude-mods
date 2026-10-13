@@ -1,0 +1,7 @@
+{
+  "name": "tempo",
+  "version": "0.1.0",
+  "author": { "name": "Daniel" },
+  "types": "./types/index.d.ts",
+  "description": "Previsão do tempo e tábua da maré da sua localidade na linha de status, em português"
+}
