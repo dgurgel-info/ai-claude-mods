@@ -111,7 +111,6 @@ export const register: Register = on => {
 
     const { Box, Text } = $.ui.resolve(e)
     const c = atual ? carga(atual.percent) : null
-    const ultimos = hist.slice(-TURNOS)
     const delta = atual ? variacao(atual, hist[hist.length - 2]) : null
     const f = cinco ? carga(cinco.percentUsed) : null
     const volta = restante(cinco?.resetsAt, await $.clock.now())
@@ -124,11 +123,7 @@ export const register: Register = on => {
             <Text>{c.icone} {c.palavra}: {atual.percent}%</Text>
             <Text> {tokens(atual.tokens)}/{tokens(atual.janela)}</Text>
             <Text> </Text>
-            {ultimos.map((l, i) => (
-              <Text key={`b${i}`} color={carga(l.percent).cor}>
-                {barra(l.percent)}
-              </Text>
-            ))}
+            <Text color={c.cor}>{fogo(atual.percent)}</Text>
             {delta && <Text> {delta}</Text>}
           </Box>
         )}
