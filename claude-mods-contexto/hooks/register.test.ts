@@ -78,7 +78,7 @@ for (const surface of ['terminal', 'desktop'] as const) {
     expect(texto).toContain('🟠 Alto: 67%')
     expect(texto).toContain('67%')
     expect(texto).toContain('134k/200k')
-    expect(texto).toContain('▂▆')
+    expect(texto).toContain('▰▰▰▰▰▰▰▱▱▱')
     expect(texto).toContain('+98k no último turno')
     expect(texto).toContain('Sessão: 4k tokens')
     expect(texto).toContain('▰▰▰▱▱▱▱▱▱▱')
