@@ -138,9 +138,13 @@ export const register: Register = on => {
             {cinco && f && <Text>  5h </Text>}
             {cinco && f && <Text color={f.cor}>{fogo(cinco.percentUsed)}</Text>}
             {cinco && f && <Text> {Math.round(cinco.percentUsed)}%</Text>}
-            {cinco && volta && <Text>  🕐 Renova: {volta}{horario && ` (${horario})`}</Text>}
           </Text>
         </Box>
+        {cinco && volta && (
+          <Box>
+            <Text>🕐 Renova: {volta}{horario && ` (${horario})`}</Text>
+          </Box>
+        )}
       </Box>
     )
   })
