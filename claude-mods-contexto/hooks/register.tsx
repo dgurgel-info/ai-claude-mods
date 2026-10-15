@@ -55,13 +55,13 @@ export function restante(resetsAt: string | undefined, agora: number) {
   return `${Math.floor(min / 60)}h${String(min % 60).padStart(2, '0')}m`
 }
 
-/** Hora local da renovação no formato HH:MM. */
+/** Hora local da renovação no mesmo formato do tempo restante: "14h45m". */
 export function horaRenovacao(resetsAt: string | undefined) {
   if (!resetsAt) return null
   const t = Date.parse(resetsAt)
   if (Number.isNaN(t)) return null
   const d = new Date(t)
-  return `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`
+  return `${d.getHours()}h${String(d.getMinutes()).padStart(2, '0')}m`
 }
 
 export const register: Register = on => {

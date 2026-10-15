@@ -40,7 +40,7 @@ describe('medidor de fogo', () => {
 
   test('hora da renovação', () => {
     const d = new Date('2026-01-01T12:13:00Z')
-    const esperado = `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`
+    const esperado = `${d.getHours()}h${String(d.getMinutes()).padStart(2, '0')}m`
     expect(horaRenovacao('2026-01-01T12:13:00Z')).toBe(esperado)
     expect(horaRenovacao(undefined)).toBeNull()
     expect(horaRenovacao('invalido')).toBeNull()
@@ -84,7 +84,7 @@ for (const surface of ['terminal', 'desktop'] as const) {
     expect(texto).toContain('▰▰▰▱▱▱▱▱▱▱')
     expect(texto).toContain('34%')
     const h = new Date('2026-01-01T02:13:00Z')
-    const hhmm = `${String(h.getHours()).padStart(2, '0')}:${String(h.getMinutes()).padStart(2, '0')}`
+    const hhmm = `${h.getHours()}h${String(h.getMinutes()).padStart(2, '0')}m`
     expect(texto).toContain(`Renova: 2h13m (${hhmm})`)
   })
 }
