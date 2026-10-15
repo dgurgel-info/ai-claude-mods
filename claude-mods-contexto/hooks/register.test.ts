@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'claude-code/testing'
 
-import { barra, carga, fogo, restante, tokens, variacao } from './register'
+import { barra, carga, fogo, horaRenovacao, restante, tokens, variacao } from './register'
 
 describe('carga', () => {
   test('faixas', () => {
@@ -36,6 +36,14 @@ describe('medidor de fogo', () => {
     expect(restante('2026-01-01T10:47:00Z', agora)).toBe('47m')
     expect(restante('2026-01-01T09:00:00Z', agora)).toBe('agora')
     expect(restante(undefined, agora)).toBeNull()
+  })
+
+  test('hora da renovação', () => {
+    const d = new Date('2026-01-01T12:13:00Z')
+    const esperado = `${d.getHours()}h${String(d.getMinutes()).padStart(2, '0')}m`
+    expect(horaRenovacao('2026-01-01T12:13:00Z')).toBe(esperado)
+    expect(horaRenovacao(undefined)).toBeNull()
+    expect(horaRenovacao('invalido')).toBeNull()
   })
 })
 
@@ -75,6 +83,8 @@ for (const surface of ['terminal', 'desktop'] as const) {
     expect(texto).toContain('Sessão: 4k tokens')
     expect(texto).toContain('▰▰▰▱▱▱▱▱▱▱')
     expect(texto).toContain('34%')
-    expect(texto).toContain('Renova: 2h13m')
+    const h = new Date('2026-01-01T02:13:00Z')
+    const hhmm = `${h.getHours()}h${String(h.getMinutes()).padStart(2, '0')}m`
+    expect(texto).toContain(`Renova: 2h13m (${hhmm})`)
   })
 }

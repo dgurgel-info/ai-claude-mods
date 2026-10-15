@@ -6,7 +6,7 @@ Mostra a carga da janela de contexto e o consumo da cota de 5 horas numa linha a
 
 ```
 🟡 Moderado: 38%  76k/200k ▁▂▂▃▃▄▄▅  +6k no último turno
-🔥 Sessão: 142k tokens  5h ▰▰▰▱▱▱▱▱▱▱ 32%  🕐 Renova: 2h13m
+🔥 Sessão: 142k tokens  5h ▰▰▰▱▱▱▱▱▱▱ 32%  🕐 Renova: 2h13m (14h45m)
                                                                   
 ╭──────────────────────────────────────────────────────────────╮
 │ >                                                            │
@@ -33,7 +33,7 @@ Níveis: 🟢 Leve (<25%) · 🟡 Moderado (<50%) · 🟠 Alto (<75%) · 🔴 Mu
 
 - `🔥 Sessão` — total de tokens consumidos na sessão.
 - `5h ▰▰▰▱▱▱▱▱▱▱ 32%` — cota usada na janela de 5 horas.
-- `🕐 Renova` — tempo até a cota renovar.
+- `🕐 Renova` — tempo até a cota renovar, com a hora local da renovação entre parênteses no mesmo formato, ex.: `(14h45m)`.
 
 A linha some enquanto uma pesquisa (survey) estiver aberta ou antes da primeira leitura.
 

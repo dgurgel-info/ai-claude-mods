@@ -55,6 +55,15 @@ export function restante(resetsAt: string | undefined, agora: number) {
   return `${Math.floor(min / 60)}h${String(min % 60).padStart(2, '0')}m`
 }
 
+/** Hora local da renovação no mesmo formato do tempo restante: "14h45m". */
+export function horaRenovacao(resetsAt: string | undefined) {
+  if (!resetsAt) return null
+  const t = Date.parse(resetsAt)
+  if (Number.isNaN(t)) return null
+  const d = new Date(t)
+  return `${d.getHours()}h${String(d.getMinutes()).padStart(2, '0')}m`
+}
+
 export const register: Register = on => {
   // Cota em tempo real: o motor avisa a cada ponto inteiro que a janela anda.
   on('session.measure', async ($, e, next) => {
@@ -106,6 +115,7 @@ export const register: Register = on => {
     const delta = atual ? variacao(atual, hist[hist.length - 2]) : null
     const f = cinco ? carga(cinco.percentUsed) : null
     const volta = restante(cinco?.resetsAt, await $.clock.now())
+    const horario = horaRenovacao(cinco?.resetsAt)
 
     return (
       <Box flexDirection="column">
@@ -128,7 +138,7 @@ export const register: Register = on => {
             {cinco && f && <Text>  5h </Text>}
             {cinco && f && <Text color={f.cor}>{fogo(cinco.percentUsed)}</Text>}
             {cinco && f && <Text> {Math.round(cinco.percentUsed)}%</Text>}
-            {cinco && volta && <Text>  🕐 Renova: {volta}</Text>}
+            {cinco && volta && <Text>  🕐 Renova: {volta}{horario && ` (${horario})`}</Text>}
           </Text>
         </Box>
       </Box>
